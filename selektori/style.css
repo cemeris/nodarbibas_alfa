@@ -1,0 +1,87 @@
+/* Stilizē HTML elementus, ievērojot šādas instrukcijas. 
+NEKĀDĀ GADĪJUMĀ NEMAINI ESOŠO HTML! RAKSTI TIKAI CSS!
+
+h2{
+color:purple
+}
+
+/* 1. Piešķir <body> elementam fonu ar krāsu #bdc3c7 */
+body {
+  background: #bdc3c7;
+}
+
+/* 2. Padari <h1> elementu ar krāsu #9b59b6 */
+h1 {
+  color: #9b59b6;
+}
+
+/* 3. Padari visus <h2> elementus oranžus */
+h2 {
+  color: rgb(200, 130, 0);
+}
+
+/* 4. Padari visus <li> elementus zilus (izvēlies savu zilās krāsas heksadecimālo kodu) */ 
+li {
+  color: #0080ff;
+}
+
+/* 5. Pārveido visu paragrāfu fonu uz dzeltenu */
+p {
+  background: #bdc3c7;
+}
+
+/* 6. Padari visus ievades laukus (inputs) ar 3px sarkanu apmali */
+input {
+  border: 3px solid red;
+}
+
+/* 7. Piešķir visiem elementiem ar klasi 'hello' baltu fonu */
+.hello {
+  background: #fff;
+}
+
+/* 8. Piešķir elementam ar id 'special' 2px cietu zilu apmali (izvēlies savu RGB zilo krāsu) */
+#special {
+  border: 2px solid rgb(0, 26, 255);
+}
+
+/* 9. Padari visus <p>, kas atrodas iekšā <div>, ar 25px fonta izmēru */
+div p {
+  font-size: 25px;
+}
+
+/* 10. Tikai ievades laukiem ar type 'text' piešķir pelēku fonu */
+[type=text] {
+  background: grey;
+}
+
+/*BONUSA UZDEVUMI*/
+
+/* 11. Piešķir abiem <p> elementiem iekš 3. <div> rozā fonu */
+div:nth-of-type(3) p {
+  background:pink;
+}
+
+/* 12. Piešķir otrajam <p> iekš 3. <div> 5px baltu apmali */
+div:nth-of-type(3) p:nth-of-type(2) {
+  border: 5px solid white;
+}
+
+/* 13. Padari <em> elementu iekš 3. <div> baltu un ar fonta izmēru 20px */
+div:nth-of-type(3) em {
+  background: white;
+  font-size:20px;
+}
+
+/* 14. Var būt nepieciešams izpētīt citus selektorus un īpašības */
+
+/* 15. Padari visiem atzīmētajiem (checked) izvēles rūtiņām (checkboxes) kreiso malu 50px (margin-left: 50px) */
+
+/* 16. Padari visus <label> elementus LIELAJĀS BURTOS, nemainot HTML (noteikti izpēti šo!) */
+
+/* 17. Padari elementa ar id 'special' pirmo burtu zaļu un ar 100px fonta izmēru */
+
+/* 18. Maini <h1> elementa krāsu uz zilu, kad tam uzbrauc ar peli (hover) */
+
+/* 19. Padari <a> elementus, kas ir apmeklēti (visited), pelēkus */
+
