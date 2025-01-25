@@ -1,20 +1,12 @@
 <?php
 
 {
-  include('debug.php');
-  include("head.php");
-  include("navigation.php");
-  include("form.php");
+  include('private/debug.php');
+  include("private/head.php");
+  include("private/navigation.php");
+  include("private/form.php");
 }
 
-/* Kalkulātora aprēķini */
-
-printBrake();
-
-$result = calculateBaseOperations(@$_GET['n'], @$_GET['m'], @$_GET['o']);
-print($result);
-
-printBrake();
 printBrake();
 
 function divide ($n, $m) {
