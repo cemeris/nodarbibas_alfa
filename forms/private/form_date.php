@@ -8,8 +8,18 @@
   </div>
   <div class="output">
     <?php
-      $result = getDateDiff(@$_GET['start'], @$_GET['end']);
-      print($result);
+      include __DIR__ . "/date_diff_helper.php";
+      // $result = secToDatePassed(
+      //   datesToDiff(@$_GET['start'], @$_GET['end'])
+      // );
+      $result = getDateDiffWithDatetime(@$_GET['start'], @$_GET['end']);
+      // $result = getDateDiff(@$_GET['start'], @$_GET['end']);
+      // print_r($result);
+
+      print(
+        "Dienas:{$result['days']} Mēneši: {$result['month']} Gadi: {$result['years']}."
+      );
+
     ?>
   </div>
 </form>
