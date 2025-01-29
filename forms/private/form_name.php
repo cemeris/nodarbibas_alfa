@@ -1,4 +1,4 @@
-<form action="" method="get" class="calculator-wraper">
+<form action="" method="post" class="calculator-wraper">
   <h4>Reģistrācija pasākumam</h4>
   <div class="calculator">
     <input type="text" name="firstname" placeholder="ierakstiet vārdu">
@@ -8,7 +8,15 @@
   </div>
   <div class="output">
     <?php
-    saveReservation(@$_GET['firstname'], @$_GET['lastname']);
+  try {
+    if (isset($_POST['firstname']) && isset($_POST['lastname'])) {
+      saveReservation(@$_POST['firstname'], @$_POST['lastname']);
+      echo "Reģistrācija noritēja veiksmīgi";
+    }
+  }
+  catch (Exception $e) {
+    echo $e->getMessage();
+  }
     ?>
   </div>
 </form>

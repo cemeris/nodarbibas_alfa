@@ -15,27 +15,35 @@ function printBrake () {
 }
 
 function saveReservation($firstname, $lastname) {
-  $file_name = __DIR__ . "/data/reservations.json";
+  if (empty($firstname)) {
+    throw new Exception('vārds netika norādīts');
+  }
+  if (empty($lastname)) {
+    throw new Exception('uzvārds netika norādīts');
+  }
 
   $reservation_manager = new Storage('reservations');
 
-  $data = $reservation_manager->getData();
-  $content = [
-    'data' => $data
-  ];
-
-  $entry = [
-    'time' => time(),
+  $reservation_manager->appendEntry([
     'firstname' => $firstname,
-    'lastname' => $lastname,
-  ];
-
-  $data[] = $entry;
-
-  $content['data'] = $data;
-
-  file_put_contents($file_name, json_encode($content, JSON_PRETTY_PRINT));
+    'lastname' => $lastname
+  ]);
 }
+
+/*
+  try {
+    $a = 1;
+    $b = 2;
+    if (true) {
+      throw new Exception('error');
+    }
+
+    $sum = $a + $b;
+  }
+  catch (Exception $e) {
+
+  }
+  */
 
 
 

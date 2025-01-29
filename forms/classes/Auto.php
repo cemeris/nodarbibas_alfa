@@ -20,11 +20,17 @@ class Auto
   public function getBrend() {
     return $this->brand;
   }
+
+  public function autopilot($location) {
+    $this->drive();
+    // ...
+  }
 }
 
 $volvo = new Auto("volvo");
 $toyota = new Auto("toyota");
 
 $volvo->getBrend(); // returns "volvo"
+$volvo->autopilot(2431);
 
 $toyota->getBrend(); // returns "toyota"

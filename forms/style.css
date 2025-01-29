@@ -146,3 +146,14 @@ span + .icon-arrow {
   color:#fff;
   font-size:18px;
 }
+
+nav {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+th, td {
+  padding: 15px;
+  border: 1px solid grey;
+}
