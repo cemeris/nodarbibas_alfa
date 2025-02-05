@@ -1,55 +1,12 @@
 <?php
 // Matemātisko operāciju un lietotāju ievades apstrādes programmas sākums
 
-// Pirmā klase: Matemātiskās operācijas
-class Calculator
-{
-    // Saskaita divus skaitļus
-    public function add($num1, $num2)
-    {
-        return $num1 + $num2;
-    }
+require_once 'Calculator.php';
+require_once 'InputHandler.php';
+require_once 'Database.php';
+require_once 'Logger_db.php';
 
-    // Atņem vienu skaitli no otra
-    public function subtract($num1, $num2)
-    {
-        return $num1 - $num2;
-    }
-
-    // Reizina divus skaitļus
-    public function multiply($num1, $num2)
-    {
-        return $num1 * $num2;
-    }
-
-    // Dalījums ar pārbaudi, vai otrais skaitlis nav nulle
-    public function divide($num1, $num2)
-    {
-        if ($num2 == 0) {
-            throw new Exception("Dalīšana ar nulli nav atļauta!");
-        }
-        return $num1 / $num2;
-    }
-}
-
-// Otrā klase: Lietotāja ievades apstrāde
-class InputHandler
-{
-    // Validē ievadītos datus
-    public function validateInput($input)
-    {
-        if (!is_numeric($input)) {
-            throw new Exception("Ievadītajai vērtībai jābūt skaitlim!");
-        }
-        return (float)$input;
-    }
-
-    // Sanitizē ievadi
-    public function sanitizeInput($input)
-    {
-        return htmlspecialchars(strip_tags($input));
-    }
-}
+$logger = new Logger();
 
 // Pieteikuma loģika (ne iekš klases, pagaidām):
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -66,6 +23,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Validē un sanitizē ievadītos datus
         $num1 = $inputHandler->validateInput($inputHandler->sanitizeInput($num1));
         $num2 = $inputHandler->validateInput($inputHandler->sanitizeInput($num2));
+
+        $max_value = 100000000;
+        if ($num1 > $max_value || $num2 > $max_value) {
+            throw new Exception("skaitlis ir pārāk liels");
+        }
 
         // Aprēķina rezultātu atkarībā no izvēlētās operācijas
         switch ($operation) {
@@ -85,11 +47,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 throw new Exception("Nederīga operācija izvēlēta!");
         }
 
+        $logger->log("Matemātiskā operācija bija $operation ar sākotnējiem skaitļiem $num1, $num2");
+
         // Parāda rezultātu
-        echo "Rezultāts: " . number_format($result, 2);
+        echo "<pre> -&gt; \n Rezultāts: " . number_format($result, 2) . "</pre>";
     } catch (Exception $e) {
         // Kļūdu apstrāde
         echo "Kļūda: " . $e->getMessage();
+
+        $logger->log("Kļūda: " . $e->getMessage());
     }
 } else {
     // Ja nav POST pieprasījuma, parādīt formu
@@ -109,12 +75,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button type="submit">Aprēķināt</button>
     </form>
     HTML;
+
+    $history = $logger->getHistory();
+
+    echo "<ul>";
+    for ($i = 0; $i < count($history); $i++) {
+        echo "<li>" .
+        $history[$i]['message']
+        . "</li>";
+    }
+
+    echo "</ul>";
 }
 
-
-
-require_once 'logger.php';
-$log = new Logger();
-
-$log->printHelloWorld();
-?>
