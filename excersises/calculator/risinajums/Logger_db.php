@@ -9,10 +9,13 @@ class Logger extends Database
   // }
 
   public function log($message) {
-    $this->insert($this->table_name, [
-      'message' => $message,
-      'time' => date('Y-m-d H:i:s')
-    ]);
+    $this->insert(
+      $this->table_name,
+      [
+        'message' => $message,
+        'time' => date('Y-m-d H:i:s')
+      ]
+    );
   }
 
   public function getHistory() {

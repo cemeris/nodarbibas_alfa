@@ -1,0 +1,32 @@
+
+IZVEIDOT REZERVĀCIJAS LAPU, KAS PIEŅEM VĀRDU UN UZVĀRDU UN IERAKSTA TOS DATUBĀZĒ
+(jāizveido lapa, kur var reģistrēt vārdu un uzvārdu)
+
+Q1: Vai vajadzīgs HTML kods?
+A1: bus vajadzīgs html kods
+
+MARK: php būs jāraksta funkcija(s), kura(s) saglabās ievadītos datus
+
+I1: Var izmantot kalkulātora kodu, lai info saglabājas log.txt
+A: Nesaglabāsim datus iekš log.txt, bet iekš datubāzes
+
+Q2: mēs to taisīsim caur php vai mySQL?
+A2: Izmantosim PHP, lai saglabātu datus mySql datubāzē.
+
+Q3: Ar ko sākt? Q4: Kādā secībā veikt darbības?
+- izveidot html kodu, lai būtu kur ievadīt informāciju,
+- tad rakstīt php kodu, lai ar to informāciju varētu kaut ko darīt
+
+Q4: Kā nosaukt failu?
+index.php (galvenā lapa, kur mēs ievietosim  gan html, gan php kodu)
+
+Q5: Kādu uzdevumu pildīs ieveitotais HTML kods?
+- html līdzīgi kā reservation_table.php (names.php)
+- HTML izveido formu caur kuru var iesniegt datus.
+
+I: HTML rakstīt atsevišķā failā (piem. view.php) un caur include, require_once ievietot HTML iekš index.php
+
+Task: Izveidot registration.php - kurš saturēs loģiku, kas apstrādās un saglabās datus
+
+
+
