@@ -7,7 +7,7 @@
     <button type="submit">Saglabāt</button>
   </div>
   <div class="output">
-    <?php
+<?php
   try {
     if (
       isset($_POST['firstname']) && isset($_POST['lastname'])
@@ -22,6 +22,6 @@
   catch (Exception $e) {
     echo $e->getMessage();
   }
-    ?>
+?>
   </div>
 </form>

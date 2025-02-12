@@ -29,4 +29,105 @@ I: HTML rakstīt atsevišķā failā (piem. view.php) un caur include, require_o
 Task: Izveidot registration.php - kurš saturēs loģiku, kas apstrādās un saglabās datus
 
 
+isset($mainigais) - pārbauda vai mainīgais ir istadīts (is set == ir iestadīts)
+is_string($mainigais) - pārbauda vai vērtība ir tekstuāla
 
+----------------------
+firstname[first]: 11
+firstname[]: 22
+
+$_POST['firstname'] = ["first" => 11, 22]
+
+----------------------
+empty($mainigais) - vai vērtība ir tukša
+
+empty(1) - false
+empty([]) - true
+empty("Sveiki pasaule!") - false
+
+!empty(1) - true
+
+(empty([]) == false) - false
+
+ne paties = aplams
+!true == false
+
+!false == true
+----------------------
+
+class A {}
+
+new - nozīmē konstruēt jaunu objektu no klases
+
+$obj_1 = new A();
+
+$obj_2 = new A();
+
+----------------------
+echo "Hello World"; ir tas pats kas HTML failā: Hello World
+
+PHP: echo "<h1>Hello World</h1>";
+HTML: <h1>Hello World</h1>
+
+PHP: print("<h1>Hello World</h1>");
+HTML: <h1>Hello World</h1>
+
+----------------------
+class Exception {
+  public function getMessage() {
+    ...
+  }
+  ...
+}
+
+$e = new Exception();
+
+$e->getMessage();
+
+
+----------------------
+
+
+ try {
+    if (
+      isset($_POST['firstname']) && isset($_POST['lastname'])
+      && is_string($_POST['firstname']) && is_string($_POST['lastname'])
+      && !empty($_POST['firstname']) && !empty($_POST['lastname'])
+    ) {
+      $registration_manager = new Registration();
+      $registration_manager->register($_POST['firstname'], $_POST['lastname']);
+      echo "Reģistrācija noritēja veiksmīgi";
+    }
+  }
+  catch (Exception $e) {
+    echo $e->getMessage();
+  }
+
+
+
+--------------------------
+Example
+
+<?php
+
+class A {
+  public function get() {
+    return [
+      $this
+    ];
+  }
+
+  public function second() {
+    return "hello world";
+  }
+}
+
+$obj = new A();
+
+echo $obj->get()[0]->get()[0]->get()[0]->get()[0]->get()[0]->get()[0]->get()[0]->second();
+
+echo "<br>";
+echo $obj->second();
+
+
+?>
