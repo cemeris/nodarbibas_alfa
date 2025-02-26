@@ -1,0 +1,2 @@
+Izveidot vienkāršu Todo list, jeb uzdevuma saraksta aplikāciju.
+Lai saglabājot uzdevumu izvādās uzdevuma virsraksts un īss apraksts.

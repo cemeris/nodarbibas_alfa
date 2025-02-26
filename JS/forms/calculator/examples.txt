@@ -1,0 +1,32 @@
+// // Piemēri
+// {
+//   let users = {
+//     "1": {firstname: "Oskars", lastname: "Āboliņš"},
+//     "2": {firstname: "Kārlis", lastname: "Ziediņš"},
+//   };
+
+//   // users[1].firstname;
+
+//   let profile = users[1];
+
+//   profile.firstname = "Gatis";
+
+//   console.log(users);
+// }
+
+/*
+
+Kā tas izskatītos ar PHP sintaksi?
+
+$form->addEventListener('submit', function ($event) {
+  $event->preventDefault();
+});
+
+$combined_str = "Hello " . "world";
+
+
+JS:
+
+let combined_str = "Hello " + "world";
+combined_str;
+*/

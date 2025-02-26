@@ -1,0 +1,62 @@
+.banner-box-1 {
+  position: absolute !important;
+  width: 15% !important;
+  padding: 7px 10px 0px 10px !important;
+  top: 9% !important;
+  right: 29% !important;
+  box-shadow: 0px 4px 24px 0px #00000029 !important;
+  z-index: 99 !important;
+}
+.wp-block-cover, .wp-block-cover-image {
+  position: relative !important;
+}
+.banner-box-2 {
+  background-size: 100% 100% !important;
+  width: 18% !important;
+  padding: 10px 24px !important;
+  box-shadow: 0px 4px 30px 0px #00000029 !important;
+  bottom: 7% !important;
+  position: absolute !important;
+  border-radius: 10px !important;
+  right: 29% !important;
+  z-index: 99 !important;
+}
+.contact-box {
+  display: inline-block !important;
+  padding: 20px 10px 15px 131px !important;
+  width: 40% !important;
+  position: absolute !important;
+  border-radius: 0px 45px 45px 0px !important;
+  left: -14% !important;
+}
+.product-img img {
+  width: 100% !important;
+  height: 350px !important;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 59% 100%, 55% 93%, 0 93%) !important;
+  border-radius: 5px !important;
+}
+.icon-box {
+  position: absolute !important;
+  right: 10px !important;
+  bottom: 10px !important;
+  background: #ffffff !important;
+  border-radius: 5px !important;
+  width: 40px !important;
+  box-shadow: 0px 4px 16px 0px #05534680 !important;
+  height: 40px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  padding: 0px !important;
+}
+
+.icon-box figure {
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+.icon-box img {
+  margin: 0 auto !important;
+  width: 20px !important;
+  height: 20px !important;
+}
